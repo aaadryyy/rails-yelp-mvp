@@ -1,0 +1,20 @@
+<%= render "navbar" %>
+<div class="container">
+  <h1>Restaurants</h1>
+
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+      <li>
+        <%= link_to (restaurant_path(restaurant)) do %>
+        <b>
+          <%= restaurant.name %>
+        </b> - <%= restaurant.category %>
+        <% end %>
+    |
+        <%= link_to "Add review", new_restaurant_review_path(restaurant) %>
+      </li>
+    <% end %>
+  </ul>
+
+</div>
+
